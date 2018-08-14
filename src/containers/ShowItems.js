@@ -1,8 +1,7 @@
 import React from 'react';
 import ProgressBar from './ProgressBar';
 import ToDoList from './ToDoList';
-import "./ShowItems.css";
-
+import "../stylesheets/ShowItems.css";
 
 export default class ShowItems extends React.Component {
 

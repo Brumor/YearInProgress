@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addGoal, deleteGoal } from '../actions/addGoal';
-import "./ToDoList.css";
+import "../stylesheets/ToDoList.css";
 
 let input = 'test';
 
