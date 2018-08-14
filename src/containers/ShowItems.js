@@ -14,10 +14,29 @@ export default class ShowItems extends React.Component {
 
   render() {
     const today = new Date();
+    let m ;
+
+    switch (today.getMonth()) {
+      case 4:
+        m = 28;
+        break;
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        m = 31;
+        break;
+      default:
+        m = 30;
+    }
+
     const yearStart = new Date(2018, 0, 0, 0, 0, 0, 0);
     const yearMeasurement =  365 * 24 * 60 *60 * 1000;
     const monthStart = new Date(2018, today.getMonth(), 0, 0, 0, 0, 0);
-    const monthMeasurement = 30 * 24 * 60 *60 * 1000;
+    const monthMeasurement = m * 24 * 60 *60 * 1000;
     const dayStart = new Date(2018, today.getMonth(), today.getDate(), 0, 0, 0, 0);
     const dayMeasurement =  24 * 60 *60 * 1000;
     const hourStart = new Date(2018, today.getMonth(), today.getDate(), today.getHours(), 0, 0, 0);
@@ -30,7 +49,7 @@ export default class ShowItems extends React.Component {
     return (
       <div className="mainContainer">
         <div className="progressBarContainer">
-          <h1 className="appTitle"><bold>Year In Progress</bold></h1>
+          <h1 className="appTitle">Year In Progress</h1>
           <ProgressBar name="Year" started={yearStart} measurement={yearMeasurement}/>
           <ProgressBar name="Month" started={monthStart} measurement={monthMeasurement} />
           <ProgressBar name="Day" started={dayStart} measurement={dayMeasurement}/>
