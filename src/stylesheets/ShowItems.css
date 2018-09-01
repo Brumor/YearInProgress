@@ -1,3 +1,6 @@
+body {
+  background-color: #2196f3;
+}
 .progressBarContainer {
     border-radius: 25px;
     margin-left : auto;
@@ -10,7 +13,6 @@
 
 .mainContainer {
   background-color: #2196f3;
-  height: 100%;
   padding: 50px
 }
 
